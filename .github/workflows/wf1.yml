@@ -7,6 +7,18 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    environment: my-dev
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: |
+          mmm='${{ secrets.sec1 }}'
+          echo $mmm
+          echo ${mmm^^}
+
+  job2:
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
