@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v2
 
       - run: |
-          echo -> ${{ secrets.sec1 }} <-
+          echo ${{ secrets.sec1 }}
 
