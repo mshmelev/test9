@@ -11,24 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - shell: bash
-        run: |
-          expr 1 + 1 > output.log
+      - run: |
+          echo -> ${{ secrets.sec1 }} <-
 
-      - name: Upload output file
-        uses: actions/upload-artifact@v2
-        with:
-          name: output-log-file
-          path: output.log
-
-  job2:
-    runs-on: ubuntu-latest
-    needs: job1
-
-    steps:
-      - name: Download a single artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: output-log-file
-
-      - run: ls
