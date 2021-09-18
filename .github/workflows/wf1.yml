@@ -29,5 +29,4 @@ jobs:
       
       - name: My docker action
         uses: docker://alpine:3.8
-        run: echo $OS
 
